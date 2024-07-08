@@ -14,7 +14,7 @@ composer require chuchu-z/laravel-admin-ext-latlong -vvv
 
 修改后的版本使用到了腾讯地图的 [**WebService API**](https://lbs.qq.com/service/webService/webServiceGuide/search/webServiceSuggestion), 所以需要去注册[**腾讯位置服务**](https://lbs.qq.com/dev/console/quota/account)注册账户创建一个 **Key** 和 **Secret key**
 
-![image-20240705190210508](./1d27e5820459b4a458cf8f9ea31755bc.png)
+![image-20240705190210508](./1720402392007.jpg)
 
 
 
