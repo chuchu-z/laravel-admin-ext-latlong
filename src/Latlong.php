@@ -3,6 +3,7 @@
 namespace Encore\Admin\Latlong;
 
 use Encore\Admin\Form\Field;
+use Encore\Admin\Admin;
 
 class Latlong extends Field
 {
@@ -42,10 +43,10 @@ class Latlong extends Field
      *
      * @return array
      */
-    public static function getAssets()
-    {
-        return ['js' => Extension::getProvider()->getAssets()];
-    }
+//    public static function getAssets()
+//    {
+//        return ['js' => Extension::getProvider()->getAssets()];
+//    }
 
     /**
      * Latlong constructor.
@@ -108,6 +109,13 @@ class Latlong extends Field
      */
     public function render()
     {
+        $assets = ['js' => Extension::getProvider()->getAssets()];
+        if (!empty($assets['js'])) {
+            foreach ($assets['js'] as $js) {
+                Admin::js($js);
+            }
+        }
+
         $this->script = Extension::getProvider()
             ->setParams([
                 'zoom' => $this->zoom
