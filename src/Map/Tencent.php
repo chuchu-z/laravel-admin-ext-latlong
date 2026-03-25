@@ -7,14 +7,13 @@ class Tencent extends AbstractMap
     /**
      * @var string
      */
-    protected $api = '//map.qq.com/api/gljs?v=1.exp&libraries=service&key=';
+    protected $api = '//map.qq.com/api/gljs?v=1.exp&libraries=service&key=%s';
     protected $sk = '';
 
     public function __construct($key = '')
     {
         parent::__construct($key);
-        $this->api = '//map.qq.com/api/gljs?v=1.exp&libraries=service&key='. env('TENCENT_MAP_KEY');
-        $this->sk = env('TENCENT_MAP_SECRET');
+        $this->sk = config('admin.extensions.latlong.providers.tencent.secret', '');
     }
 
     /**
